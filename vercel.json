@@ -1,7 +1,15 @@
 {
-  "functions": {
-    "api/express.js": {
-      "runtime": "nodejs18.x"
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/express.js",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/express.js"
+    }
+  ]
 }
